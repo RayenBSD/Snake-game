@@ -65,6 +65,9 @@ def move():
     if (appleX <= head.getX() + 7.5 <= (appleX + screenX/20) and (appleY - screenY/20) <= head.getY() <= appleY):
         appleX = rand.randint(0, 440)
         appleY = rand.randint(0, 440)
+        while not(appleX%15 == 0 and appleY%15==0):
+            appleX = rand.randint(0, 440)
+            appleY = rand.randint(0, 440)
         score += 1
         if len(fullBody) > 0:
             newBody = Snake(fullBody[len(fullBody)-1].getX(), fullBody[len(fullBody)-1].getY(), 15, 15)
